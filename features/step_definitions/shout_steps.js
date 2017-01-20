@@ -1,5 +1,5 @@
 var assert = require('assert');
-  var Shouty = require('../../lib/shouty');
+var Shouty = require('../../lib/shouty');
 var Coordinate = require('../../lib/coordinate')
 
 var {defineSupportCode} = require('cucumber');
@@ -26,5 +26,16 @@ defineSupportCode(function({Given, When, Then}) {
     assert.equal(Object.keys(this.shouty.getMessagesHeardBy('Lucy')).length, 0)
     callback()
   });
+
+  When('Oscar shouts', function (callback) {
+    this.shouty.shout('Oscar', ARBITARY_MESSAGE)
+    callback()
+ });
+
+ Then('Lucy should not hear Oscar', function (callback) {
+   var heardMessages = this.shouty.getMessagesHeardBy('Lucy');
+   assert.equal(heardMessages['Oscar'], undefined)
+   callback()
+ });
 
 });
