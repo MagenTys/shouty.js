@@ -22,3 +22,8 @@ Feature: Hear Shout
    And Oscar shouts
    Then Lucy should not hear Oscar
    But Lucy should hear Sean
+
+ Scenario: Shouter does not hear echoes
+   Given Lucy is at [300, 300]
+   When Lucy shouts
+   Then Lucy should hear nothing
