@@ -12,8 +12,8 @@ defineSupportCode(function({Given, When, Then}) {
     callback()
   });
 
-  When(/^Sean shouts$/, function (callback) {
-    this.shouty.shout('Sean', ARBITARY_MESSAGE)
+  When(/^(\w+) shouts$/, function (person, callback) {
+    this.shouty.shout(person, ARBITARY_MESSAGE)
     callback()
   });
 
@@ -26,11 +26,6 @@ defineSupportCode(function({Given, When, Then}) {
     assert.equal(Object.keys(this.shouty.getMessagesHeardBy('Lucy')).length, 0)
     callback()
   });
-
-  When('Oscar shouts', function (callback) {
-    this.shouty.shout('Oscar', ARBITARY_MESSAGE)
-    callback()
- });
 
  Then('Lucy should not hear Oscar', function (callback) {
    var heardMessages = this.shouty.getMessagesHeardBy('Lucy');
