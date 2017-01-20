@@ -42,4 +42,9 @@ defineSupportCode(function({Given, When, Then}) {
    callback()
  });
 
+ Then(/^Lucy should hear (\d+) shouts from Sean$/, function (count, callback) {
+   assert.equal(this.shouty.getMessagesHeardBy('Lucy').filter(message => { return message['Sean'] != undefined}).length, count)
+   callback()
+ });
+
 });

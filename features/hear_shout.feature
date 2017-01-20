@@ -28,3 +28,9 @@ Feature: Hear Shout
  Scenario: Shouter does not hear echoes
    When Lucy shouts
    Then Lucy should hear nothing
+
+ Scenario: Multiple shouts from one person
+   Given Sean is at [0, 500]
+   When Sean shouts
+   And Sean shouts
+   Then Lucy should hear 2 shouts from Sean
