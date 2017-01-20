@@ -7,13 +7,8 @@ var {defineSupportCode} = require('cucumber');
 defineSupportCode(function({Given, When, Then}) {
   const ARBITARY_MESSAGE = 'Hello, world'
 
-  Given(/^Lucy is at \[(\d+), (\d+)\]$/, function (x, y, callback) {
-    this.shouty.setLocation('Lucy', new Coordinate(x, y))
-    callback()
-  });
-
-  Given(/^Sean is at \[(\d+), (\d+)\]$/, function (x, y, callback) {
-    this.shouty.setLocation('Sean', new Coordinate(x, y))
+  Given(/^(\w+) is at \[(\d+), (\d+)\]$/, function (person, x, y, callback) {
+    this.shouty.setLocation(person, new Coordinate(x, y))
     callback()
   });
 
