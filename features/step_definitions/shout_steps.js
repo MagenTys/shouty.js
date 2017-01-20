@@ -12,6 +12,15 @@ defineSupportCode(function({Given, When, Then}) {
     callback()
   });
 
+  Given('people are located at', function (table, callback) {
+
+    table.hashes().forEach(row => {
+      this.shouty.setLocation(row['name'], new Coordinate(row['x'], row['y']))
+    })
+
+    callback();
+  });
+
   When(/^(\w+) shouts$/, function (person, callback) {
     this.shouty.shout(person, ARBITARY_MESSAGE)
     callback()

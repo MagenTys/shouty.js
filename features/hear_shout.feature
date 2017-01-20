@@ -15,13 +15,15 @@ Feature: Hear Shout
     Then Lucy should hear nothing
 
   Scenario: Multiple shouters
-   Given Lucy is at [0, 0]
-   And Sean is at [0, 500]
-   And Oscar is at [1100, 0]
-   When Sean shouts
-   And Oscar shouts
-   Then Lucy should not hear Oscar
-   But Lucy should hear Sean
+    Given people are located at
+      | name  | x    | y   |
+      | Lucy  | 0    | 0   |
+      | Sean  | 0    | 500 |
+      | Oscar | 1100 | 0   |
+    When Sean shouts
+    And Oscar shouts
+    Then Lucy should not hear Oscar
+    But Lucy should hear Sean
 
  Scenario: Shouter does not hear echoes
    Given Lucy is at [300, 300]
