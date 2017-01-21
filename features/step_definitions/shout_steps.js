@@ -4,8 +4,13 @@ var Coordinate = require('../../lib/coordinate')
 
 var {defineSupportCode} = require('cucumber');
 
-defineSupportCode(function({Given, When, Then}) {
+defineSupportCode(function({Given, When, Then, Before}) {
   const ARBITARY_MESSAGE = 'Hello, world'
+
+  Before(function(scenarioResult, callback) {
+    console.log('Before Shouty Steps');
+    callback()
+  })
 
   When(/^(\w+) shouts$/, function (person, callback) {
     this.shouty.shout(person, ARBITARY_MESSAGE)
