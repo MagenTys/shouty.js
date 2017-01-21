@@ -12,6 +12,10 @@ defineSupportCode(function({Given, When, Then, Before}) {
   })
 
   Given(/^(\w+) is at \[(\d+), (\d+)\]$/, function (person, x, y, callback) {
+
+    console.log("person is a: " + typeof person)
+    console.log("x is a: " + typeof x)
+
     this.shouty.setLocation(person, new Coordinate(x, y))
     callback()
   });
