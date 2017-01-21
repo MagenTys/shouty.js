@@ -5,6 +5,7 @@ Feature: Hear Shout
   Background:
     Given Lucy is at [0, 0]
 
+  @wip
   Scenario Outline: <description>
     Given Sean is at [0, <distance>]
     When Sean shouts

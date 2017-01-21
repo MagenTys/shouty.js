@@ -8,8 +8,8 @@ function CustomWorld() {
 defineSupportCode(function({setWorldConstructor, Before, After}) {
   setWorldConstructor(CustomWorld)
 
-  Before(function(scenarioResult, callback) {
-    console.log("Before hook 1 called")
+  Before({tags: "@wip"}, function(scenarioResult, callback) {
+    console.log("Before @wip scenario")
     callback()
   })
 
@@ -18,8 +18,8 @@ defineSupportCode(function({setWorldConstructor, Before, After}) {
     callback()
   })
 
-  After(function(scenarioResult, callback) {
-    console.log("After hook 1 called")
+  After({tags: "@wip"}, function(scenarioResult, callback) {
+    console.log("After @wip scenario")
     callback()
   })
 
