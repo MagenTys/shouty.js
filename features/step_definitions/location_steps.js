@@ -4,19 +4,29 @@ var Coordinate = require('../../lib/coordinate')
 
 var {defineSupportCode} = require('cucumber');
 
-defineSupportCode(function({Given, When, Then, Before}) {
+defineSupportCode(function({addTransform, Given, When, Then, Before}) {
+
+  addTransform({
+    captureGroupRegexps: ['\\d+, \\d+'],
+    transformer: function(coordinate){
+      var [groups,x,y] = coordinate.match(/(\d+), (\d+)/)
+      return new Coordinate(x,y)
+    },
+    typeName: 'Coordinate'
+  })
 
   Before(function(scenarioResult, callback) {
     console.log('Before Location Steps');
     callback()
   })
 
-  Given(/^(\w+) is at \[(\d+), (\d+)\]$/, function (person, x, y, callback) {
+  Given(/^(\w+) is at \[(\d+, \d+)\]$/, function (person, coordinate, callback) {
 
     console.log("person is a: " + typeof person)
-    console.log("x is a: " + typeof x)
+    console.log("coordinate is a: " + typeof coordinate)
+    console.log(coordinate)
 
-    this.shouty.setLocation(person, new Coordinate(x, y))
+    this.shouty.setLocation(person, coordinate)
     callback()
   });
 
