@@ -7,20 +7,6 @@ var {defineSupportCode} = require('cucumber');
 defineSupportCode(function({Given, When, Then}) {
   const ARBITARY_MESSAGE = 'Hello, world'
 
-  Given(/^(\w+) is at \[(\d+), (\d+)\]$/, function (person, x, y, callback) {
-    this.shouty.setLocation(person, new Coordinate(x, y))
-    callback()
-  });
-
-  Given('people are located at', function (table, callback) {
-
-    table.hashes().forEach(row => {
-      this.shouty.setLocation(row['name'], new Coordinate(row['x'], row['y']))
-    })
-
-    callback();
-  });
-
   When(/^(\w+) shouts$/, function (person, callback) {
     this.shouty.shout(person, ARBITARY_MESSAGE)
     callback()
