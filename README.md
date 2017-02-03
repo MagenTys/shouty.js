@@ -26,7 +26,9 @@ Or simply [download](https://github.com/MagenTys/shouty.js/releases) a zip or ta
 
 ### Set up environment
 
-You can run the `./runDocker.sh` command to get docker up and running which has Node.js, Cucumber and NPM installed
+You can run the `./runDocker.sh` command to get docker up and running which has Node.js, Cucumber and NPM installed...
+
+Or if that fails....
 
 #### Install Node.js
 
