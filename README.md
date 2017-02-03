@@ -26,6 +26,8 @@ Or simply [download](https://github.com/cucumber-ltd/shouty.js/releases) a zip o
 
 ### Set up environment
 
+You can run the `./runDocker.sh` command to get docker up and running which has Node.js, Cucumber and NPM installed
+
 #### Install Node.js
 
 #### Install Cucumber and other dependencies
@@ -67,7 +69,7 @@ Then do this for each example to discover more examples:
 * Can you think of a context where the outcome would be different?
 * Are there any other outcomes we haven't thought about?
 
-### Implement one capability. Text UI only.
+### Implement one capability.
 
 * Write a Cucumber Scenario for one of the examples
 * Make it pass!
