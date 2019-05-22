@@ -13,16 +13,16 @@ That is, if you're attending a BDD/Cucumber course.
 
 Git:
 
-    git clone https://github.com/MagenTys/shouty.js.git
+    git clone https://github.com/NTTDATA-UK/shouty.js.git
     cd shouty.js
     git checkout YYYY-MM-DD
 
 Subversion:
 
-    svn checkout https://github.com/MagenTys/shouty.js/branches/YYYY-MM-DD shouty.js
+    svn checkout https://github.com/NTTDATA-UK/shouty.js/branches/YYYY-MM-DD shouty.js
     cd shouty.js
 
-Or simply [download](https://github.com/MagenTys/shouty.js/releases) a zip or tarball.
+Or simply [download](https://github.com/NTTDATA-UK/shouty.js/releases) a zip or tarball.
 
 ### Set up environment
 
